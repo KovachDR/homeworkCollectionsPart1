@@ -3,6 +3,7 @@ package pro.sky.homeworkcollectionssets.service;
 import org.springframework.stereotype.Service;
 import pro.sky.homeworkcollectionssets.exceptions.EmployeeAlreadyAddedException;
 import pro.sky.homeworkcollectionssets.exceptions.EmployeeNotFoundException;
+import pro.sky.homeworkcollectionssets.exceptions.EmployeeStoragelsFullException;
 import pro.sky.homeworkcollectionssets.model.Employee;
 
 import java.util.ArrayList;
@@ -23,6 +24,9 @@ public class EmployeeServiceImp implements EmployeeService {
         Employee employee = new Employee(firstName, lastName);
         if (employeeList.contains(employee)){
             throw new EmployeeAlreadyAddedException();
+        }
+        if (employeeList.size() == MAX_EMPLOYEE){
+            throw new EmployeeStoragelsFullException();
         }
             employeeList.add(employee);
         return employee;
