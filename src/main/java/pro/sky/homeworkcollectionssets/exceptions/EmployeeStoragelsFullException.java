@@ -2,21 +2,8 @@ package pro.sky.homeworkcollectionssets.exceptions;
 
 public class EmployeeStoragelsFullException extends RuntimeException{
     public EmployeeStoragelsFullException() {
+    super("Список сотрудников полон");
     }
 
-    public EmployeeStoragelsFullException(String message) {
-        super(message);
-    }
 
-    public EmployeeStoragelsFullException(String message, Throwable cause) {
-        super(message, cause);
-    }
-
-    public EmployeeStoragelsFullException(Throwable cause) {
-        super(cause);
-    }
-
-    public EmployeeStoragelsFullException(String message, Throwable cause, boolean enableSuppression, boolean writableStackTrace) {
-        super(message, cause, enableSuppression, writableStackTrace);
-    }
 }
