@@ -49,25 +49,4 @@ public class Controller {
         return employeeServiceImp.findAll();
     }
 
-    ///////////////////////////////////////////////////////
-    @GetMapping("/departmentId")
-    public List<Employee> findAllEmployeesInDepartment(@RequestParam int departmentId) {
-        return employeeServiceImp.findEmployeesInDepartment(departmentId);
-    }
-
-    @GetMapping("/department")
-    public String findAllEmployeesWithNumberDepartment() {
-        return employeeServiceImp.findAllEmployeesWithDepartmentNumbers();
-    }
-
-    @GetMapping("/min-salary")
-    public Optional<Employee> findMinSalaryInDepartment(@RequestParam int departmentId) {
-        return employeeServiceImp.findMinSalaryInDepartment(departmentId);
-    }
-
-    @GetMapping("/max-salary")
-    public Optional<Employee> findMaxSalaryInDepartment(@RequestParam int departmentId) {
-        return employeeServiceImp.findMaxSalaryInDepartment(departmentId);
-    }
-
 }
